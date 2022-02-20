@@ -1,0 +1,38 @@
+var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
+
+const plugins = require('gulp-load-plugins')({
+  'config': require('./package.json'),
+  'pattern': ['*'],
+  'scope': ['dependencies', 'devDependencies'],
+  'rename': {
+    'gulp-postcss': 'repostcss',
+    'gulp-sass': 'resass'
+  }
+});
+
+gulp.task('sass:front', require('./tasks/sass')(gulp, plugins, 'main', '../dist/css', false));
+gulp.task('webpack:main', require('./tasks/webpack')(gulp, plugins, 'main', '../dist/js'));
+
+// Optional
+gulp.task('iconfont', require('./tasks/iconfont')(gulp, plugins));
+
+// Main
+gulp.task('sass', gulp.parallel('sass:front'));
+
+gulp.task('webpack', gulp.parallel('webpack:main'));
+
+// Watch
+gulp.task('watch:sass', function () {
+  gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+});
+gulp.task('watch:js', function () {
+  gulp.watch('./js/*.js', gulp.series('webpack'));
+});
+gulp.task('watch:iconfont', function () {
+  gulp.watch('./fonts/iconfont/*.svg', gulp.series('iconfont'));
+});
+
+gulp.task('watch', gulp.parallel('sass', 'webpack', 'watch:sass', 'watch:js'));
+
+gulp.task('default', gulp.parallel('sass', 'webpack'));

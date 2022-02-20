@@ -1,0 +1,55 @@
+/* ---- Footer ---- */
+.footer-wrap {
+  @extend .clearfix;
+
+  .footer-content {
+    padding: rem(105px) 0 rem(95px); border-top: 1px solid $light-blue;
+    @include max(sm){ padding: rem(65px) 0 rem(45px);;}
+    @include max(xs){ padding: rem(45px) 0 rem(25px);;}
+
+    [class*="col-"]{
+      +[class*="col-"]{
+        @include max(sm){ margin-top: rem(40px);}
+      }
+    }
+  }
+}
+
+// Logo
+.footer-logo {
+  float: left; width: 187px; display: block; text-decoration: none;
+  @include max(xs){ width: 150px;}
+}
+
+
+// Title
+.footer-title {
+  font-size: rem(20px); margin-bottom: rem(35px);
+  @include max(sm){ margin-bottom: rem(20px);}
+}
+
+// Nav
+.footer-nav {
+
+  &.footer-alt-nav {
+    @include min(md){ padding-left: rem(40px);}
+  }
+
+  ul {
+    margin-bottom: 0;
+    li {
+      +li {
+        margin-top: rem(15px);
+      }
+      a {
+        color: $text-color; font-weight: 400;
+        &:hover, &:focus { color: $primary; text-decoration: none;}
+      }
+    }
+  }
+}
+
+// Newsletter
+.newsletter-block {
+  @include min(md){ padding-left: rem(25px);}
+}

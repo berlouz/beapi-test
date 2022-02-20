@@ -1,0 +1,94 @@
+/* ---- Button ---- */
+.btn {
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  font-size: rem(16px);
+  min-height: $btn-height;
+  text-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  white-space: normal;
+  padding: rem(13.5px) rem(30px);
+  background-image: none;
+  white-space: normal;
+  box-shadow: initial;
+  transition: 0.3s;
+  font-weight: 700;
+  &:hover, &:focus, &:active , &:active:focus { outline: none; box-shadow: none; text-decoration: none;}
+
+  &[disabled] {
+    pointer-events: none; opacity: 0.5;
+  }
+}
+
+.btn-xs {
+  min-height: $btn-xs; padding: rem(10.5px) rem(25px); font-weight: 600;
+}
+
+.btn-xxs {
+  min-height: $btn-xxs; padding: rem(7.5px) rem(15px);
+}
+
+.btn-full { width: 100%; }
+
+.btn-icon {
+  i { margin-right: rem(7px); display: inline-block; vertical-align: middle;}
+}
+
+.btn-link {
+  min-height: auto; padding: 0;
+}
+
+.btn-lg-40 {
+  padding-left: rem(40px); padding-right: rem(40px);
+}
+
+.btn-menu {
+  display: none; float: right; width: 24px; height: 24px; position: relative; margin-top: rem(5px);
+  @include max(sm){ display: block;}
+  span {
+    @include burger(24px, 2px, 5px, $primary); position: absolute; top: 50%; left: 50%; margin-left: rem(-15px); margin-top: rem(-1.5px);
+    // &:before, &:after { width: 20px; left: 4px;}
+  }
+
+  &.clicked {
+    span {
+      @include burger-to-cross;
+    }
+  }
+}
+
+.btn-primary {
+  color: $white; background-color: $primary; border: 1px solid $primary;
+  &:focus, &:hover, &:active:focus { background-color: transparent; color: $primary;}
+}
+.btn-outline-primary {
+  color: $primary; background-color: transparent; border: 1px solid $primary;
+  &:focus, &:hover, &:active:focus { background: $primary; color: $white;}
+}
+
+.btn-primary-link {
+  color: $primary; font-weight: 600; text-decoration: underline;
+}
+
+.btn-secondary {
+  color: $white; background-color: $secondary;
+  &:focus, &:hover, &:active:focus { background-color: transparentize($secondary, 0.2); border-color: transparentize($secondary, 0.2)}
+}
+.btn-outline-secondary {
+  color: $secondary; background-color: transparent; border: 1px solid $light-blue;
+  &:focus, &:hover, &:active:focus { background: $secondary; color: $white; border: 1px solid $secondary;}
+}
+
+.btn-tertiary {
+  color: $white; background-color: $tertiary;
+  &:focus, &:hover, &:active:focus { background-color: transparentize($tertiary, 0.2); border-color: transparentize($tertiary, 0.2);}
+}
+.btn-outline-tertiary {
+  color: $tertiary; background-color: transparent; border: 1px solid $tertiary;
+  &:focus, &:hover, &:active:focus { background: $tertiary; color: $white;}
+}

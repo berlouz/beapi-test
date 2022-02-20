@@ -1,0 +1,68 @@
+// COLOURS
+$blue:          #173a56;
+$light-blue:    #bcd0e5;
+$light-blue-10: #4dadf7;
+$light-blue-20: #567592;
+$orange:        #ff9900;
+$dark-grey:     #2f281e;
+$grey:          #544837;
+$light-grey:    #efefef;
+$red:           #f03e3d;
+$green:         #79e000;
+$yellow:        #fab005;
+$white:         #fff;
+$black:         #000;
+$purple:        #7752be;
+
+$primary:     $orange;
+$secondary :  $blue;
+$tertiary:    $dark-grey;
+
+$success:    $green;
+$info:       $primary;
+$warning:    $yellow;
+$danger:     $red;
+
+// Complement
+$border-color:    $light-blue;
+$text-color:      $grey;
+$body-color:      $grey;
+$input-color:     $white;
+
+// SIZES
+$btn-height: 53px;
+$btn-xs: 46px;
+$btn-xxs: 39px;
+$input-height: 48px;
+$input-height-lg: 60px;
+
+// Gutter Padding
+$grid-gutter-width: 30px;
+
+// FONTS
+@import "mixins/strip-unit";
+$font-family-base: 'Poppins', Arial, sans-serif;
+
+  // Fz Bootstrap
+  $font-size-base: 1rem /* 16px*/;
+  $font-value-base: strip-unit($font-size-base);
+
+  // Fz for mixin rem
+  $font-size-base-px: (16px*$font-value-base) /* 1rem */;
+
+// BREAK-POINTS
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1445px
+) !default;
+
+// Container
+$container-max-widths: (
+  sm: 1120px,
+  md: 1130px,
+  lg: 1140px,
+  xl: 1140px
+) !default;

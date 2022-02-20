@@ -1,0 +1,324 @@
+/* ---- Home ---- */
+// Common
+.default-section {
+  padding: rem(110px) 0; overflow: hidden;
+  @include max(sm){ padding: rem(90px) 0;}
+  @include max(xs){ padding: rem(50px) 0;}
+
+  +.default-section { padding-top: 0;}
+
+  +.tools-section { padding-top: rem(20px);}
+
+  +.contact-section {
+    margin-top: rem(50px);
+    @include max(sm){ margin-top: rem(20px);}
+  }
+}
+
+// Presentation
+.presentation-section { padding-top: rem(30px);}
+
+.presentation-item {
+  padding-top: rem(80px); max-width: 458px; width: 100%;
+  @include max(md){ padding-top: rem(50px);}
+  @include max(sm){ max-width: 100%; padding-top: 0; margin-bottom: rem(25px);}
+
+  // Btn
+  .btn {
+    @include max(xs){ width: 100%;}
+    +.btn {
+      @include max(xs){ margin-top: rem(10px);}
+    }
+  }
+}
+.presentation-title {
+  font-size: rem(44px); line-height: 1.23; margin-bottom: rem(30px);
+  @include max(xs){ font-size: rem(38px);}
+}
+.presentation-text {
+  font-size: rem(18px); line-height: 1.56; margin-bottom: rem(45px); font-weight: 400;
+}
+.presentation-img {
+  @include min(lg){ float: right; width: 605px; max-width: 605px; margin-right: rem(-15px);}
+  @include max(sm){ max-width: 70%; width: 100%; margin: 0 auto; display: block;}
+  @include max(xs){ max-width: 100%;}
+}
+
+// Tools
+.tools-section {
+  padding: rem(90px) 0; overflow: hidden;
+  @include bgci('../img/home/tool-bg.png',bottom, center, transparent);
+
+  +.contact-section, +.default-section {
+    margin-top: rem(110px);
+    @include max(sm){ margin-top: rem(90px);}
+    @include max(xs){ margin-top: rem(50px);}
+  }
+
+  $gutter: 22.5px;
+  .row { margin-bottom: rem(-30px); margin-left: -$gutter; margin-right: -$gutter;
+    [class*="col-"] { margin-bottom: rem(30px); padding-left: $gutter; padding-right: $gutter;}
+  }
+}
+.tools-title {
+  text-align: center; max-width: 540px; width: 100%; margin: 0 auto rem(52px);
+  @include max(xs){ max-width: 100%;}
+}
+.tools-action {
+  text-align: center; padding-top: rem(34px);
+  .btn {
+    @include max(xs){ width: 100%;}
+  }
+}
+
+// Item
+.tool-item {
+  .tool-img {
+    width: 50px; height: 50px; border-radius: 19px; color: $white; margin-bottom: rem(30px); line-height: 50px; text-align: center; position: relative;
+    @include max(sm){ margin-bottom: rem(20px);}
+
+    &:after {
+      content: ''; display: block; width: 50px; height: 25px; margin: 8px 0 0; opacity: 0.85; border-radius: 19px; -webkit-filter: blur(10px); filter: blur(10px);  z-index: -1; position: absolute; left: 0; bottom: -3px;
+    }
+
+    &.purple-tool-img {
+      background-color: $purple;
+      &:after {
+        background-color: $purple;
+      }
+    }
+    &.yellow-tool-img {
+      background-color: $yellow;
+      &:after {
+        background-color: $yellow;
+      }
+    }
+    &.red-tool-img {
+      background-color: $red;
+      &:after {
+        background-color: $red;
+      }
+    }
+    &.light-blue-tool-img {
+      background-color: $light-blue-10;
+      &:after {
+        background-color: $light-blue-10;
+      }
+    }
+  }
+
+  .tool-title {
+    font-size: rem(22px); font-weight: 600;
+  }
+
+  .tool-text {
+    line-height: 1.63;
+  }
+}
+
+// Info
+.info-item {
+  max-width: 486px; width: 100%; padding-top: rem(25px);
+  @include max(sm){ padding-top: 0; max-width: 100%; margin-bottom: rem(30px);}
+
+  // Reverse
+  .reverse-section & {
+    @include min(md){ float: right;}
+  }
+}
+.info-title-block {
+  margin-bottom: rem(25px);
+  .info-subtitle {
+    font-size: rem(16px); font-weight: 500; color: $text-color; margin-bottom: rem(4px); display: block;
+    @include max(xs){ font-size: rem(14px);}
+  }
+  .info-title {
+    margin-bottom: 0; display: block;
+  }
+}
+
+.info-text {
+  line-height: 1.63; margin-bottom: rem(30px);
+}
+
+.info-img {
+  @include max(sm){ max-width: 50%; width: 100%; margin: 0 auto; display: block;}
+  @include max(xs){ max-width: 100%;}
+}
+
+.info-check-list {
+  line-height: 1.63; max-width: 430px; width: 100%;
+  @include max(sm){ max-width: 100%;}
+  li {
+    @include icon(check); position: relative; padding-left: rem(65px);
+    &:before {
+      width: 35px; height: 35px; border-radius: 13.9px; box-shadow: 0 0 0 0.4px $primary, inset 0 0 0 0.4px $primary, inset 0 0 0 2.9px $white; background-color: $primary; display: block; color: $white; text-align: center; line-height: 35px; font-size: rem(12px); pointer-events: none; position: absolute; top: 50%; transform: translateY(-50%); left: 0;
+    }
+    +li { margin-top: rem(30px);}
+  }
+}
+
+// Detail
+.detail-item {
+  +.detail-item { margin-top: rem(25px);}
+  .detail-title {
+    font-size: rem(16px); margin-bottom: rem(10px);
+  }
+  .detail-text {
+    line-height: 1.63;
+  }
+}
+
+// Contact
+.contact-section {
+  position: relative; z-index: 1; overflow: hidden;
+  @include bgci('../img/home/contact-bg.png',top, center, transparent);
+
+  +.default-section { padding-top: 0;}
+
+  +.tools-section { padding-top: rem(20px);}
+
+  .container {
+    position: relative; padding-top: rem(230px); padding-bottom: rem(165px); @extend .clearfix;
+    @include max(sm){ padding-top: rem(90px); padding-bottom: rem(90px);}
+    @include max(xs){ padding-top: rem(50px); padding-bottom: rem(50px);}
+  }
+}
+
+.contact-block {
+  max-width: 542px; width: 100%; margin: 0 auto; text-align: center;
+
+  .contact-title { margin-bottom: rem(25px);}
+  .contact-text {
+    line-height: 1.63; margin-bottom: rem(45px); color: $light-blue-20;
+    @include max(xs){ margin-bottom: rem(30px);}
+  }
+
+  // List
+  +.contact-list {
+    @include max(sm){ margin-top: rem(40px);}
+  }
+}
+
+.contact-item {
+  @extend .clearfix; max-width: 350px; width: 100%;
+  .contact-text {
+    max-width: 290px; width: 100%; position: relative; z-index: 2; margin-left: rem(58px); margin-bottom: rem(-12px); box-shadow: 0 2px 8px 0 rgba($light-blue-20, 0.1); border-radius: 26.5px; text-align: center; display: inline-block;
+    @include max(xs){ margin-left: 0;}
+
+    .contact-text-inner {
+      background-color: $white; color: $dark-grey;  padding: rem(15px) rem(25px); border-radius: 26.5px;
+      position: relative; z-index: 2;
+    }
+    &:before {
+      content: ''; width: 17px; height: 17px; box-shadow: 0 2px 15px 0 rgba($light-blue-20, 0.1); background-color: $white; border-radius: 50%; position: absolute; left: 33px; bottom: -6px; display: block; z-index: 1;
+    }
+    &:after {
+      content: ''; width: 9px; height: 9px; box-shadow: 0 2px 15px 0 rgba($light-blue-20, 0.1); background-color: $white; border-radius: 50%; position: absolute; left: 20px; bottom: -17px; display: block;
+    }
+  }
+
+  .contact-avatar {
+    width: 98px; height: 98px; border-radius: 50%; @include bgc(center, center, $light-grey);
+  }
+
+  // Right
+  &.contact-right-item {
+    .contact-text {
+      margin-left: 0; margin-right: rem(58px);
+      &:before { left: auto; right: 33px;}
+      &:after { left: auto; right: 20px;}
+    }
+    .contact-avatar { float: right;}
+  }
+}
+
+.contact-list {
+  margin-bottom: 0;
+  @include max(sm){ max-width: 350px; width: 100%; margin: 0 auto;}
+  li {
+    @include min(md){ float: left; width: 33%;}
+
+    +li {
+      @include max(sm){ margin-top: rem(25px);}
+    }
+    &:first-child {
+      position: absolute; top: 180px; left: -20px;
+      @include max(md){ left: 15px; top: 160px;}
+      @include max(sm){ position: static;}
+    }
+    &:nth-child(2){
+      position: absolute; top: 116px; right: 80px;
+      @include max(md){ right: 15px;}
+      @include max(sm){ position: static;}
+    }
+    &:nth-child(3){
+      .contact-item {
+        @include min(md){ max-width: 304px;}
+        .contact-text {
+          @include min(md){max-width: 263px;}
+          &:before { @include min(md){right: 53px;}}
+          &:after { @include min(md){right: 35px;}}
+        }
+      }
+    }
+    &:nth-child(4){
+      @include min(md){ margin-top: rem(105px);}
+      .contact-item {
+      @include min(md){  margin: 0 auto;}
+      }
+    }
+    &:nth-child(5){
+      @include min(md){ margin-top: rem(-15px);}
+      .contact-item {
+        float: right;
+        @include min(lg){ margin-right: rem(-30px);}
+        @include max(sm){ float: none;}
+      }
+    }
+  }
+}
+
+// Marketing
+.marketing-title-blocks {
+  margin-bottom: rem(55px);
+  @include max(xs){ margin-bottom: rem(30px);}
+}
+
+.marketing-item {
+  display: block; color: $text-color;
+
+  &:hover, &:focus {
+    text-decoration: none; color: $text-color;
+    .marketing-img { transform: scale(1.1);}
+    .marketing-item-title { color: $primary;}
+  }
+
+  // Img
+  .marketing-img-content {
+    overflow: hidden; border-radius: 8px 8px 0 0; position: relative;
+
+
+    &:after {
+      content: ''; display: block; padding-bottom: 53.163%;
+    }
+  }
+
+  .marketing-img {
+    @include bgc(center, center, $grey); position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 1; transition: .3s;
+  }
+
+  // Content
+  .marketing-content {
+    padding-top: rem(25px);
+  }
+
+  .marketing-item-info {
+    font-weight: 400; margin-bottom: rem(15px);
+  }
+
+  .marketing-item-title {
+    font-size: rem(24px); line-height: 1.42;  transition: .3s; margin-bottom: 0;
+    @include max(xs){ font-size: rem(22px);}
+  }
+}

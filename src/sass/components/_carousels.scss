@@ -1,0 +1,21 @@
+/* ---- Carousel ---- */
+// Marketing
+.marketing-carousel {
+  overflow: hidden;
+
+  // Pagination
+  .marketing-pagination {
+    display: flex; justify-content: center; padding-top: rem(84px);
+    @include max(xs){ padding-top: rem(30px);}
+  }
+  .swiper-pagination-bullet {
+    width: 16px; height: 16px; background-color: $light-grey; border-radius: 50%; display: block; cursor: pointer; float: left; margin: 0 rem(5px); transition: .3s;
+    &:hover, &:focus {
+      background: rgba($primary,.5);
+    }
+
+    &.swiper-pagination-bullet-active {
+      background: $primary;
+    }
+  }
+}

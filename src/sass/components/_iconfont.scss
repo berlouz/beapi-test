@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "productly";
+  src: url('../fonts/icons/productly.eot');
+  src: url('../fonts/icons/productly.eot?#iefix') format('eot'),
+    url('../fonts/icons/productly.woff2') format('woff2'),
+    url('../fonts/icons/productly.woff') format('woff'),
+    url('../fonts/icons/productly.ttf') format('truetype'),
+    url('../fonts/icons/productly.svg#productly') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "productly";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == arrow-pointer-solid {
+    $char: "\E001";
+  }
+  @if $filename == check {
+    $char: "\E002";
+  }
+  @if $filename == chevron {
+    $char: "\E003";
+  }
+  @if $filename == heart {
+    $char: "\E004";
+  }
+  @if $filename == hourglass-solid {
+    $char: "\E005";
+  }
+  @if $filename == stumbleupon-brands {
+    $char: "\E006";
+  }
+  @if $filename == test {
+    $char: "\E007";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    } @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-arrow-pointer-solid {
+  @include icon(arrow-pointer-solid);
+}
+.icon-check {
+  @include icon(check);
+}
+.icon-chevron {
+  @include icon(chevron);
+}
+.icon-heart {
+  @include icon(heart);
+}
+.icon-hourglass-solid {
+  @include icon(hourglass-solid);
+}
+.icon-stumbleupon-brands {
+  @include icon(stumbleupon-brands);
+}
+.icon-test {
+  @include icon(test);
+}

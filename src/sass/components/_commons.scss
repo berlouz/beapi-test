@@ -1,0 +1,12 @@
+/* ---- Commons ---- */
+
+// Title
+.default-title {
+  font-size: rem(36px); margin-bottom: rem(12px);
+  @include max(xs){ font-size: rem(34px);}
+}
+
+// Text
+.default-text {
+  line-height: 1.63;
+}
